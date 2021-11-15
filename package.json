@@ -1,0 +1,29 @@
+{
+  "name": "api-comidas",
+  "version": "1.0.0",
+  "description": "Api Comidas",
+  "main": "index.js",
+  "scripts": {
+    "startNode": "tsc && gulp && concurrently \"npm run node\" ",
+    "start": "concurrently -r \"npm run tsc:w\" \"npm run node\" ",
+    "node": "nodemon -q ./index.js",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "tsc:next": "tsc --target es2018 --lib es2018",
+    "lint": "tslint --project .",
+    "lint:fix": "tslint --project . --fix"
+  },
+  "author": "Lautaro Avila",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "require-dir": "^1.2.0",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7"
+  }
+}
